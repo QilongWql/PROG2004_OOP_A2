@@ -1,33 +1,28 @@
-public class Person {
+public abstract class Person {
     public enum Gender {
         MALE, FEMALE, OTHER
     }
-
+ 
     private String name;
     private Integer age;
     private Gender gender;
     private String phoneNumber;
-
+ 
     public Person() {
         this.name = "";
         this.age = null;
         this.gender = Gender.OTHER;
         this.phoneNumber = "";
     }
-
+ 
     public Person(String name, Integer age, Gender gender, String phoneNumber) {
         setName(name);
         setAge(age);
         setGender(gender);
         setPhoneNumber(phoneNumber);
     }
-
-    public void printDetails() {
-        System.out.println("\t" + "Name: " + this.name);
-        System.out.println("\t" + "Age: " + this.age);
-        System.out.println("\t" + "Gender: " + this.gender);
-        System.out.println("\t" + "Phone number: " + this.phoneNumber);
-    } 
+ 
+    public abstract void printDetails();
 
     public String getName() {
         return name;

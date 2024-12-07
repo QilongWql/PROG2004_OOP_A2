@@ -1,6 +1,6 @@
 public class Visitor extends Person {
     public enum MembershipType {
-        Tourist, Member
+        BASIC, BRONZE, SILVER, GOLD
     }
 
     private MembershipType membershipType;
@@ -8,7 +8,7 @@ public class Visitor extends Person {
 
     public Visitor() {
         super();
-        this.membershipType = MembershipType.Tourist;
+        this.membershipType = MembershipType.BASIC;
         this.homeAddress = "";
     }
 
@@ -35,11 +35,15 @@ public class Visitor extends Person {
         this.homeAddress = homeAddress;
     }
     
-    public void printVisitor() {
+    @Override
+    public void printDetails() {
         System.out.println("Visitor's imformation: ");
-        super.printDetails();
+        System.out.println("\t" + "Name: " + this.getName());
+        System.out.println("\t" + "Age: " + this.getAge());
+        System.out.println("\t" + "Gender: " + this.getGender());
+        System.out.println("\t" + "Phone number: " + this.getPhoneNumber());
         System.out.println("\t" + "Membership type: " + this.membershipType);
         System.out.println("\t" + "Home address: " + this.homeAddress);
         System.out.println();
-    } 
+    }
 }

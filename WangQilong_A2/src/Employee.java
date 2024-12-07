@@ -51,12 +51,16 @@ public class Employee extends Person {
         this.emergencyContact = emergencyContact.trim();
     }
 
-    public void printEmployee() {
+    @Override
+    public void printDetails() {
         System.out.println("Employee's imformation: ");
         System.out.println("\t" + "EmployeeId: " + this.employeeId);
-        super.printDetails();
+        System.out.println("\t" + "Name: " + this.getName());
+        System.out.println("\t" + "Age: " + this.getAge());
+        System.out.println("\t" + "Gender: " + this.getGender());
+        System.out.println("\t" + "Phone number: " + this.getPhoneNumber());
         System.out.println("\t" + "Shift pattern: " + this.shiftPattern);
         System.out.println("\t" + "Emergency contact phone number: " + this.emergencyContact);
         System.out.println();
-    } 
+    }
 }
