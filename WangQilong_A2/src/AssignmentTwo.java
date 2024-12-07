@@ -3,26 +3,26 @@ import java.util.Queue;
 
 public class AssignmentTwo {
     public static void main(String[] args){
-        Employee employee1 = new Employee(
-            "WangQilong",
-            21, 
-            Person.Gender.MALE,
-            "1565233566646464654654564",
-            "001",
-            "full-time",
-            "15131129006"
-        );
-        employee1.printDetails();
-        Employee employee = new Employee();
+        // Employee employee1 = new Employee(
+        //     "WangQilong",
+        //     21, 
+        //     Person.Gender.MALE,
+        //     "1565233566646464654654564",
+        //     "001",
+        //     "full-time",
+        //     "15131129006"
+        // );
+        // employee1.printDetails();
+        // Employee employee = new Employee();
  
-        employee.setAge(12);
-        employee.setName("fdsf");
-        employee.setGender(Person.Gender.MALE);
-        employee.setPhoneNumber("156456322");
-        employee.setEmployeeId("E001");
-        employee.setShiftPattern("Full-time");
-        employee.setEmergencyContact("1234567890");
-        employee.printDetails();
+        // employee.setAge(12);
+        // employee.setName("fdsf");
+        // employee.setGender(Person.Gender.MALE);
+        // employee.setPhoneNumber("156456322");
+        // employee.setEmployeeId("E001");
+        // employee.setShiftPattern("Full-time");
+        // employee.setEmergencyContact("1234567890");
+        // employee.printDetails();
 
         new AssignmentTwo().partThree();
     }
