@@ -7,7 +7,7 @@ public class AssignmentTwo {
             "WangQilong",
             21, 
             Person.Gender.MALE,
-            "15652335666",
+            "1565233566646464654654564",
             "001",
             "full-time",
             "15131129006"
@@ -29,8 +29,10 @@ public class AssignmentTwo {
 
     public void partThree(){
         Queue<Visitor> queue1 = new LinkedList<>();
+        LinkedList<Visitor> history1 = new LinkedList<>();
         Queue<Visitor> queue2 = new LinkedList<>();
-        Ride ride = new Ride("Roller Coaster", true, new Employee(), Ride.ThrillLevel.MILD, "Coaster", 1.4, queue1);
+        LinkedList<Visitor> history2 = new LinkedList<>();
+        Ride ride = new Ride("Roller Coaster", true, new Employee(), Ride.ThrillLevel.MILD, "Coaster", 1.4, queue1, history1);
  
         Visitor visitor1 = new Visitor("Alice", 30, Person.Gender.FEMALE, "1234567890", Visitor.MembershipType.GOLD, "123 Main St");
         Visitor visitor2 = new Visitor("Bob", 25, Person.Gender.MALE, "0987654321", Visitor.MembershipType.SILVER, "456 Elm St");
@@ -53,18 +55,19 @@ public class AssignmentTwo {
 
 
 
-        Ride ride2 = new Ride("Roller Coaster", true, new Employee(), Ride.ThrillLevel.MILD, "Coaster", 1.4, queue2);
+        Ride ride2 = new Ride("Roller Coaster", true, new Employee(), Ride.ThrillLevel.MILD, "Coaster", 1.4, queue2, history2);
  
-        ride2.addVisitorToQueue(visitor1);
-        ride2.addVisitorToQueue(visitor2);
-        ride2.addVisitorToQueue(visitor3);
-        ride2.addVisitorToQueue(visitor4);
-        ride2.addVisitorToQueue(visitor5);
+        ride2.addVisitorToHistory(visitor1);
+        ride2.addVisitorToHistory(visitor2);
+        ride2.addVisitorToHistory(visitor3);
+        ride2.addVisitorToHistory(visitor4);
+        ride2.addVisitorToHistory(visitor5);
  
-        ride2.removeVisitorFromQueue(visitor4);
-        System.out.println("Removed visitor: " + "visitor4");
+        ride2.checkVisitorFromHistory(visitor1);
 
-        ride2.printQueue();
+        ride2.numberOfVisitors();
+
+        ride2.printRideHistory();
     }
     public void partFourA(){
     }

@@ -37,7 +37,6 @@ public class Visitor extends Person {
     
     @Override
     public void printDetails() {
-        System.out.println("Visitor's imformation: ");
         System.out.println("\t" + "Name: " + this.getName());
         System.out.println("\t" + "Age: " + this.getAge());
         System.out.println("\t" + "Gender: " + this.getGender());

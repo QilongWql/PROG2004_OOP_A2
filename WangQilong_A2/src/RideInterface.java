@@ -7,11 +7,11 @@ public interface RideInterface {
  
     //void runOneCycle();
  
-    //void addVisitorToHistory(Visitor visitor);
+    public void addVisitorToHistory(Visitor visitor);
  
-    //boolean checkVisitorFromHistory(Visitor visitor);
+    public boolean checkVisitorFromHistory(Visitor visitor);
  
-    //int numberOfVisitors();
+    public int numberOfVisitors();
  
-    //void printRideHistory();
+    public void printRideHistory();
 }

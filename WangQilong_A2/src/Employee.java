@@ -53,7 +53,6 @@ public class Employee extends Person {
 
     @Override
     public void printDetails() {
-        System.out.println("Employee's imformation: ");
         System.out.println("\t" + "EmployeeId: " + this.employeeId);
         System.out.println("\t" + "Name: " + this.getName());
         System.out.println("\t" + "Age: " + this.getAge());
