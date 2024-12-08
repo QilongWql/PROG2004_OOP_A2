@@ -71,6 +71,11 @@ public class AssignmentTwo {
         ride.printRideHistory();
 
         ride.printQueue();
+        
+        ride.importRideHistory("WangQilong_A2\\src\\Collection.csv");
+
+        ride.printRideHistory();
+        // ride.exportRideHistory("WangQilong_A2\\src\\Collection.csv");
         //Ride ride2 = new Ride("Roller Coaster", true, new Employee(), Ride.ThrillLevel.MILD, "Coaster", 1.4, queue2, collection2, 2, 0);
  
         // ride2.addVisitorToHistory(visitor5);

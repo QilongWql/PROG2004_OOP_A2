@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -67,8 +72,8 @@ public class Ride implements RideInterface {
  
         int ridersTaken = 0;
         while (!Queue.isEmpty() && ridersTaken < maxRider) {
-            Visitor visitor = Queue.poll();
-            Collection.add(visitor);
+            Visitor firstVisitor = Queue.poll();
+            addVisitorToHistory(firstVisitor);
             ridersTaken++;
         }
  
@@ -165,6 +170,43 @@ public class Ride implements RideInterface {
     // Sort the collection
     public void sortVisitors() {
         Collections.sort(Ride.this.Collection, new VisitorComparator());
+    }
+
+    // Export Ride history to a file
+    public void exportRideHistory(String filePath) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            for (Visitor visitor : Collection) {
+                writer.write(visitor.toCSV());
+                writer.newLine();
+            }
+            System.out.println("Ride history exported successfully to " + filePath);
+        } catch (IOException e) {
+            System.err.println("Error exporting ride history: " + e.getMessage());
+        }
+    }
+
+    // Reading from a file
+    public void importRideHistory(String filePath) {
+        LinkedList<Visitor> tempVisitors = new LinkedList<>();
+ 
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                try {
+                    Visitor visitor = Visitor.fromCSV(line);
+                    tempVisitors.add(visitor);
+                } catch (IllegalArgumentException e) {
+                    System.err.println("Error parsing CSV line: " + line + ". " + e.getMessage());
+                }
+            }
+ 
+            this.Collection.addAll(tempVisitors);
+ 
+            System.out.println("Ride history imported successfully from " + filePath);
+ 
+        } catch (IOException e) {
+            System.err.println("Error importing ride history: " + e.getMessage());
+        }
     }
 
     // Setter() and Getter() methods
