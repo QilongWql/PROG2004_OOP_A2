@@ -5,7 +5,7 @@ public interface RideInterface {
  
     public void printQueue();
  
-    //void runOneCycle();
+    public void runOneCycle();
  
     public void addVisitorToHistory(Visitor visitor);
  
