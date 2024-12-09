@@ -84,12 +84,15 @@ public class Ride implements RideInterface {
     // Add visitors to the queue.
     @Override
     public void addVisitorToQueue(Visitor visitor){
-        if ((visitor != null) && (visitor.getHeight() >= heightRestriction)) {
+        if ((visitor != null) && (visitor.getHeight() >= heightRestriction) && isOpen) {
             Queue.offer(visitor);
             System.out.println("Visitor added to the queue successfully!");
         } 
-        else {
+        else if ((visitor.getHeight() < heightRestriction) && isOpen){
             System.out.println("Visitor's height is too low!");
+        }
+        else {
+            System.out.println("This ride is not");
         }
     }
 
@@ -170,6 +173,7 @@ public class Ride implements RideInterface {
     // Sort the collection.
     public void sortVisitors() {
         Collections.sort(Ride.this.Collection, new VisitorComparator());
+        System.out.println("The collection has been sorted!");
     }
 
     // Export Ride history to a file.
