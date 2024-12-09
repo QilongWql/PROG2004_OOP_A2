@@ -57,7 +57,7 @@ public class Ride implements RideInterface {
         setNumOfCycles(numOfCycles);
     }
 
-    // The ride runs one lap
+    // The ride runs one lap.
     @Override
     public void runOneCycle() {
         if (operator == null) {
@@ -81,7 +81,7 @@ public class Ride implements RideInterface {
         System.out.println("The amusement facilities have been running for a cycle and are carried together " + ridersTaken + " visitors!");
     }
 
-    // Add visitors to the queue
+    // Add visitors to the queue.
     @Override
     public void addVisitorToQueue(Visitor visitor){
         if ((visitor != null) && (visitor.getHeight() >= heightRestriction)) {
@@ -93,7 +93,7 @@ public class Ride implements RideInterface {
         }
     }
 
-    // Remove the visitor from the queue
+    // Remove the visitor from the queue.
     @Override
     public void removeVisitorFromQueue(Visitor visitor) {
         if (visitor != null && Queue.remove(visitor)) {
@@ -104,7 +104,7 @@ public class Ride implements RideInterface {
         }
     }
 
-    // Print visitor details
+    // Print visitor details.
     @Override
     public void printQueue() {
         if (!Queue.isEmpty()) {
@@ -118,7 +118,7 @@ public class Ride implements RideInterface {
         }
     }
 
-    // Add the visitor to the Collection
+    // Add the visitor to the Collection.
     @Override
     public void addVisitorToHistory(Visitor visitor) {
         boolean isadd = Collection.add(visitor);
@@ -130,20 +130,20 @@ public class Ride implements RideInterface {
         }
     }
     
-    // Check whether the visitor is in the Collection
+    // Check whether the visitor is in the Collection.
     @Override
     public boolean checkVisitorFromHistory(Visitor visitor) {
         boolean isfound = Collection.contains(visitor);
         if (isfound) {
-            System.out.println("Visitor found in ride history!");
+            System.out.println("Visitor " + visitor.getName() + " is found in ride history!");
         } 
         else {
-            System.out.println("Visitor not found in ride history!");
+            System.out.println("Visitor " + visitor.getName() + " is not found in ride history!");
         }
         return isfound;
     }
 
-    // Number of visitors in the Collection
+    // Number of visitors in the Collection.
     @Override
     public int numberOfVisitors() {
         int iscount = Collection.size();
@@ -151,7 +151,7 @@ public class Ride implements RideInterface {
         return iscount;
     }
  
-    // Print details of all visitors who have ridden the ride
+    // Print details of all visitors who have ridden the ride.
     @Override
     public void printRideHistory() {
         Iterator<Visitor> iterator = Collection.iterator();
@@ -167,12 +167,12 @@ public class Ride implements RideInterface {
     }
     }
 
-    // Sort the collection
+    // Sort the collection.
     public void sortVisitors() {
         Collections.sort(Ride.this.Collection, new VisitorComparator());
     }
 
-    // Export Ride history to a file
+    // Export Ride history to a file.
     public void exportRideHistory(String filePath) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             for (Visitor visitor : Collection) {
@@ -185,7 +185,7 @@ public class Ride implements RideInterface {
         }
     }
 
-    // Reading from a file
+    // Reading from a file.
     public void importRideHistory(String filePath) {
         LinkedList<Visitor> tempVisitors = new LinkedList<>();
  
@@ -209,7 +209,7 @@ public class Ride implements RideInterface {
         }
     }
 
-    // Setter() and Getter() methods
+    // Setter() and Getter() methods.
     public String getRideName() {
         return rideName;
     }
