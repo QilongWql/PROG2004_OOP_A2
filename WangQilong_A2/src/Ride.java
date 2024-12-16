@@ -57,6 +57,7 @@ public class Ride implements RideInterface {
         setNumOfCycles(numOfCycles);
     }
 
+    
     // The ride runs one lap.
     @Override
     public void runOneCycle() {

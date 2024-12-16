@@ -18,6 +18,20 @@ public class Employee extends Person {
         setEmergencyContact(emergencyContact);
     }
 
+    // Method for printing specific information.
+    @Override
+    public void printDetails() {
+        System.out.println("\t" + "EmployeeId: " + this.employeeId);
+        System.out.println("\t" + "Name: " + this.getName());
+        System.out.println("\t" + "Age: " + this.getAge());
+        System.out.println("\t" + "Gender: " + this.getGender());
+        System.out.println("\t" + "Phone number: " + this.getPhoneNumber());
+        System.out.println("\t" + "Shift pattern: " + this.shiftPattern);
+        System.out.println("\t" + "Emergency contact phone number: " + this.emergencyContact);
+        System.out.println();
+    }
+
+    // Setter() and Getter() methods.
     public String getEmployeeId() {
         return employeeId;
     }
@@ -49,17 +63,5 @@ public class Employee extends Person {
             throw new IllegalArgumentException("Emergency contact cannot be null or empty!");
         }
         this.emergencyContact = emergencyContact.trim();
-    }
-
-    @Override
-    public void printDetails() {
-        System.out.println("\t" + "EmployeeId: " + this.employeeId);
-        System.out.println("\t" + "Name: " + this.getName());
-        System.out.println("\t" + "Age: " + this.getAge());
-        System.out.println("\t" + "Gender: " + this.getGender());
-        System.out.println("\t" + "Phone number: " + this.getPhoneNumber());
-        System.out.println("\t" + "Shift pattern: " + this.shiftPattern);
-        System.out.println("\t" + "Emergency contact phone number: " + this.emergencyContact);
-        System.out.println();
     }
 }

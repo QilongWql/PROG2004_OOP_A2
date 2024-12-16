@@ -24,6 +24,7 @@ public abstract class Person {
  
     public abstract void printDetails();
 
+    // Setter() and Getter() methods.
     public String getName() {
         return name;
     }
@@ -34,7 +35,7 @@ public abstract class Person {
         } else {
             throw new IllegalArgumentException("Name cannot be null or empty!");
         }
-    }
+    }// The name entry cannot be empty.
 
     public Integer getAge() {
         return age;
@@ -46,7 +47,7 @@ public abstract class Person {
         } else {
             throw new IllegalArgumentException("Age must be a non-negative integer!");
         }
-    }
+    }// The Age must be a non-negative integer.
 
     public Gender getGender() {
         return gender;
@@ -58,7 +59,7 @@ public abstract class Person {
         } else {
             throw new IllegalArgumentException("Gender cannot be null!");
         }
-    }
+    }// Gender entry cannot be empty, The Age must be a non-negative integer.
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -70,5 +71,5 @@ public abstract class Person {
         } else {
             throw new IllegalArgumentException("Invalid phone number format!");
         }
-    }
+    }// Phone numbers can have an optional plus sign (\\+?) Followed by 1 to 15 digits.
 }

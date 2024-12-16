@@ -4,27 +4,27 @@ import java.util.Queue;
 public class AssignmentTwo {
     public static void main(String[] args){
         System.out.println("PartThree");
-        System.out.println("-----------------------------------------");
+        System.out.println("------------------------------------------");
         new AssignmentTwo().partThree();
         
         System.out.println("PartFourA");
-        System.out.println("-----------------------------------------");
+        System.out.println("------------------------------------------");
         new AssignmentTwo().partFourA();
 
         System.out.println("PartFourB");
-        System.out.println("-----------------------------------------");
+        System.out.println("------------------------------------------");
         new AssignmentTwo().partFourB();
 
         System.out.println("PartFive");
-        System.out.println("-----------------------------------------");
+        System.out.println("------------------------------------------");
         new AssignmentTwo().partFive();
 
         System.out.println("PartSix");
-        System.out.println("-----------------------------------------");
+        System.out.println("------------------------------------------");
         new AssignmentTwo().partSix();
 
         System.out.println("PartSeven");
-        System.out.println("-----------------------------------------");
+        System.out.println("------------------------------------------");
         new AssignmentTwo().partSeven();
     }
 

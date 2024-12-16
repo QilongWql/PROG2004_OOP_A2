@@ -22,6 +22,45 @@ public class Visitor extends Person {
         setHomeAddress(homeAddress);
     }
 
+    // Method for printing specific information.
+    @Override
+    public void printDetails() {
+        System.out.println("\t" + "Name: " + this.getName());
+        System.out.println("\t" + "Age: " + this.getAge());
+        System.out.println("\t" + "Gender: " + this.getGender());
+        System.out.println("\t" + "Phone number: " + this.getPhoneNumber());
+        System.out.println("\t" + "Height: " + this.height);
+        System.out.println("\t" + "Membership type: " + this.membershipType);
+        System.out.println("\t" + "Home address: " + this.homeAddress);
+        System.out.println();
+    }
+
+    // Part Six
+    public String toCSV() {
+        return getName() + "," + getAge() + "," +getGender() + "," + getPhoneNumber() + "," + height + "," + membershipType + "," + homeAddress;
+    }
+
+    // Part Seven
+    public static Visitor fromCSV(String csvLine) throws IllegalArgumentException {
+        
+        String[] fields = csvLine.split(",");
+ 
+        if (fields.length != 7) {
+            throw new IllegalArgumentException("Invalid CSV line: expected 7 fields, but got " + fields.length);
+        }
+
+        String name = fields[0];
+        int age = Integer.parseInt(fields[1]);
+        Gender gender = Gender.valueOf(fields[2].toUpperCase());
+        String phoneNumber = fields[3];
+        double height = Double.parseDouble(fields[4]);
+        MembershipType membershipType = MembershipType.valueOf(fields[5].toUpperCase());
+        String homeAddress = fields[6];
+ 
+        return new Visitor(name, age, gender, phoneNumber, height, membershipType, homeAddress);
+    }
+
+    // Setter() and Getter() methods.
     public MembershipType getMembershipType() {
         return membershipType;
     }
@@ -46,40 +85,5 @@ public class Visitor extends Person {
             throw new IllegalArgumentException("There's something wrong of your height! Please check!");
         }
         this.height = height;
-    }
-    
-    @Override
-    public void printDetails() {
-        System.out.println("\t" + "Name: " + this.getName());
-        System.out.println("\t" + "Age: " + this.getAge());
-        System.out.println("\t" + "Gender: " + this.getGender());
-        System.out.println("\t" + "Phone number: " + this.getPhoneNumber());
-        System.out.println("\t" + "Height: " + this.height);
-        System.out.println("\t" + "Membership type: " + this.membershipType);
-        System.out.println("\t" + "Home address: " + this.homeAddress);
-        System.out.println();
-    }
-
-    public String toCSV() {
-        return getName() + "," + getAge() + "," +getGender() + "," + getPhoneNumber() + "," + height + "," + membershipType + "," + homeAddress;
-    }
-
-    public static Visitor fromCSV(String csvLine) throws IllegalArgumentException {
-        
-        String[] fields = csvLine.split(",");
- 
-        if (fields.length != 7) {
-            throw new IllegalArgumentException("Invalid CSV line: expected 7 fields, but got " + fields.length);
-        }
-
-        String name = fields[0];
-        int age = Integer.parseInt(fields[1]);
-        Gender gender = Gender.valueOf(fields[2].toUpperCase());
-        String phoneNumber = fields[3];
-        double height = Double.parseDouble(fields[4]);
-        MembershipType membershipType = MembershipType.valueOf(fields[5].toUpperCase());
-        String homeAddress = fields[6];
- 
-        return new Visitor(name, age, gender, phoneNumber, height, membershipType, homeAddress);
     }
 }
